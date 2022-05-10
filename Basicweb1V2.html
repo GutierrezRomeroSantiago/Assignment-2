@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./header.css">
+<title>BasicWeb</title>
+</head>
+<script
+src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js">
+</script>
+
+
+<body onload="startTime()" id="body" class="body">
+
+  <script>
+    function startTime() {
+      const today = new Date();
+      let h = today.getHours();
+      let m = today.getMinutes();
+      let s = today.getSeconds();
+      m = checkTime(m);
+      s = checkTime(s);
+      document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+      setTimeout(startTime, 1000);
+    }
+    
+    function checkTime(i) {
+      if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+      return i;
+    }
+</script>
+
+    <div id="head" class="thehead">
+        <h1><b>Santiago Gutiérrez Romero</b></h1>
+        <p>IT student</p>
+    
+        <script>
+            function darkMode(){
+                var a = document.getElementById("body");
+                if(a.classList.contains("bodyDark")){
+                    document.getElementById("head").classList.replace("theheadDark", "thehead");
+                    document.getElementById("body").classList.replace("bodyDark", "body");
+                } else {
+                document.getElementById("body").classList.replace("body", "bodyDark");
+                document.getElementById("head").classList.replace("thehead", "theheadDark");
+                }   
+            }
+      </script>
+
+<div class="buttonPosition">
+  <a class="buttondarmode" onclick="darkMode()">
+  <img id="hoverin" class="image" src="./darkmode.png">
+  </a>
+  <b>
+    <div id="txt"></div>
+    </b>
+</div>
+    </div>
+
+    
+    
+<main>
+
+    <div class="mainContainer2">
+        <div class="insideContainer2">
+            
+          <div>
+            <div>
+              <h3><b>Resume</b></h3>
+            </div>
+        
+            <div>
+              <p>
+                <h2>
+                  Carrer
+                </h2>
+              </p>
+              <h3>
+                <b>
+              <div id="new">
+                <form style="bottom: 0;">
+                  <input id="info" value="" type="text" placeholder="New Info">
+                  <br>
+                  <a onclick="addInfo()"> <img id="imaho" class="imageAdd" src="addIcon.png"> </a>
+                </form>
+              </div>
+                </b>
+            </h3>
+              <div>
+                <p>
+                  <h3>
+                    <b>
+                      <li>
+                      University Oberta of catalunya - Degree in Psichology (2019-Currently)
+                      </li>
+                    </b>
+                  </h3>
+                  <h3>
+                    <b>
+                      <li>
+                      I.E.S. Punta del Verde - IT Systems and Networks Management (2019-2022)
+                      </li>
+                    </b>
+                  </h3>
+                  <h3>
+                    <b>
+                      <li>
+                      Cambridge Universite - First Certificate (2021)
+                      </li>
+                    </b>
+                  </h3>
+                </p>
+
+                  <script>
+                    function addInfo(){
+                      var info = document.getElementById("info").value;
+                      var tag = document.createElement("p");
+                      var text = document.createTextNode(info);
+                      tag.appendChild(text);
+                      var element = document.getElementById("new");
+                      element.appendChild(tag);
+                    }
+
+                    function addInfo1(){
+                      var info = document.getElementById("infoSkill").value;
+                      var tag = document.createElement("p");
+                      var text = document.createTextNode(info);
+                      tag.appendChild(text);
+                      var element = document.getElementById("new1");
+                      element.appendChild(tag);
+                    }
+
+                    function addInfo2(){
+                      var info = document.getElementById("infoSoft").value;
+                      var tag = document.createElement("p");
+                      var text = document.createTextNode(info);
+                      tag.appendChild(text);
+                      var element = document.getElementById("new2");
+                      element.appendChild(tag);
+                    }
+                  </script>
+
+              </div>
+              <div>
+                <div>
+                </div>
+                <div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <p>
+                <h2>
+                   Skills & Technologies
+                </h2>
+              </p>
+              <h3>
+                <b>
+              <div id="new1">
+                <form style="bottom: 0;">
+                  <input autocomplete="off" id="infoSkill" value="" type="text" placeholder="New IT Skill">
+                  <br>
+                  <a onclick="addInfo1()"> <img id="imaho" class="imageAdd" src="addIcon.png"> </a>
+                </form>
+              </div>
+                </b>
+            </h3>
+              <div>
+                <p>
+                  <h3>
+                    <b>
+                      <li>
+                      JavaScript
+                      </li>
+                      <li>
+                        TypeScript
+                      </li>
+                      <li>
+                        Angular.js
+                      </li>
+                      <li>
+                        Node.js
+                      </li>
+                      <li>
+                        Express.js
+                        </li>
+                      <li>
+                        MongoDB
+                      </li>
+                      <li>
+                        React.js
+                      </li>
+                      <li>
+                      HTML5
+                      </li>
+                      <li>
+                      CSS3
+                      </li>
+                      <li>
+                      PHP
+                      </li>
+                      <li>
+                      MySQL
+                      </li>
+                      <li>
+                      Git
+                      </li>
+                      <li>
+                      Linux
+                      </li>
+                      <li>
+                      Windows
+                      </li>
+                     
+              <div>
+                <br>
+                <a onclick="displayCanvas()">
+                  <img id="chartHo" class="imageChart" src="./stats.png">
+                </a>
+                <canvas style="display: none;" id="myChart" style="width:100%;max-width:700px"></canvas>
+                <script>
+                  function displayCanvas(){
+                    var x = document.getElementById("myChart")
+
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                  } else {
+                    x.style.display = "block";
+                    myChart()
+                  }
+                  }
+                  function myChart(){
+                  var xValues = ["JavaScript", "TypeScript", "Angular.js", "Node.js", "Express.js", "MongoDB", "React.js", "HTML5", "CSS3", "PHP", "MySQL", "Git", "Linux", "Windows"];
+                  var yValues = [8,8,8,9,9,10,6,6,6,4,3,8,9,10];
+                  var barColors = ["black", "black","black","black", "black","black","black", "black", "black","black","black", "black","black","black"];
+
+                    new Chart("myChart", {
+                        type: "bar",
+                        data: {
+                          labels: xValues,
+                          datasets: [{
+                          backgroundColor: barColors,
+                          data: yValues
+                                    }]
+                              },
+                         options: {
+                          legend: {display: false},
+                          title: {
+                          display: true,
+                          text: "IT technologies Level"
+                                  }
+                         }
+                            });
+                          }
+                </script>
+              </div>
+            </div>
+          </div>
+          <div>
+            <p>
+              <h2>
+                Soft Skills
+              </h2>
+            </p>
+            <h3>
+              <b>
+            <div id="new2">
+              <form style="bottom: 0;">
+                <input autocomplete="off" id="infoSoft" value="" type="text" placeholder="New Soft Skill">
+                <br>
+                <a onclick="addInfo2()"> <img id="imaho" class="imageAdd" src="addIcon.png"> </a>
+              </form>
+            </div>
+              </b>
+          </h3>
+            <div>
+              <p>
+                <h3>
+                  <b>
+                    <li>
+                    Teamwork
+                    </li>
+                    <li>
+                    Communication
+                    </li>
+                    <li>
+                    Problem solving
+                    </li>
+                    <li>
+                    Adaptability
+                    </li>
+                    <li>
+                    Time management
+                    </li>
+                    <li>
+                    Leadership
+                    </li>
+                    <li>
+                    Creativity
+                    </li>
+                  </b>
+                </h3>
+              </p>
+            </div>
+            
+            <a onclick="displayCanvas1()">
+              <img id="chartHo" class="imageChart" src="./doughnut.png">
+            </a>
+
+            <canvas style="display: none;" id="myChart1" style="width:100%;max-width:600px"></canvas>
+
+            <script>
+              function displayCanvas1(){
+                    var x = document.getElementById("myChart1")
+
+                    if (x.style.display === "block") {
+                    x.style.display = "none";
+                  } else {
+                    x.style.display = "block";
+                    doughnut()
+                  }
+              }
+              function doughnut(){
+              var xValues = ["Teamwork", "Communication", "Problem solving", "Adaptability", "Time management", "Leadership", "Creativity"];
+              var yValues = [7, 7, 6, 10, 7, 5, 10];
+              var barColors = [
+                "#b91d47",
+                "#00aba9",
+                "#2b5797",
+                "#e8c3b9",
+                "#1e7145",
+                "#ffa500",
+                "#ff0000"
+              ];
+              
+              new Chart("myChart1", {
+                type: "doughnut",
+                data: {
+                  labels: xValues,
+                  datasets: [{
+                    backgroundColor: barColors,
+                    data: yValues
+                  }]
+                },
+                options: {
+                  title: {
+                    display: true,
+                    text: "Soft skills Level"
+                  }
+                }
+              });
+            }
+              </script>
+
+          </div>
+        </div>
+
+        </div>
+    </div>
+
+<div class="naviPosition">
+    <div class="naviDecarate">
+        
+            <a href="./BasicwebV2.html">
+            <button class="button"><span>About me</span></button><br>
+            </a>
+            <a href="./Basicweb1V2.html">
+            <button class="button"><span>Resume</span></button><br>
+            </a>
+            <a href="./Basicweb2V2.html">
+            <button class="button"><span>Contact</span></button><br>
+            </a>
+    </div>
+</div>
+
+</main>
+
+
+    <footer>
+<div>
+    <div class="thefoot2">
+        <b>This Project was made by Santiago Gutiérrez Romero</b>
+            <p>
+            <span class="spanLabel"><span class="label">Front-end</span></span>
+            <span class="spanLabel"><span class="label">Typescript</span></span>
+            <span class="spanLabel"><span class="label">Windows</span></span>
+            <span class="spanLabel"><span class="label">Back-end</span></span>
+            <span class="spanLabel"><span class="label">Javascript</span></span>
+            <span class="spanLabel"><span class="label">Linux</span></span>
+            <span class="spanLabel"><span class="label">Node.js</span></span>
+            <span class="spanLabel"><span class="label">PhP</span></span>
+            <span class="spanLabel"><span class="label">HTML</span></span>
+            <span class="spanLabel"><span class="label">Angular.js</span></span>
+            <span class="spanLabel"><span class="label">Object-Oriented Programming</span></span>
+            <span class="spanLabel"><span class="label">CSS</span></span>
+            <span class="spanLabel"><span class="label">React</span></span>
+            <span class="spanLabel"><span class="label">Operatives Systems</span></span>
+            </p>
+    </div>
+</div>
+    </footer>
+</body>
+
+</html>

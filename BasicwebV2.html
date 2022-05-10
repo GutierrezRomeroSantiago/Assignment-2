@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="./header.css">
+<title>BasicWeb</title>
+</head>
+
+
+<body onload="startTime()" id="body" class="body">
+
+<script>
+        function startTime() {
+          const today = new Date();
+          let h = today.getHours();
+          let m = today.getMinutes();
+          let s = today.getSeconds();
+          m = checkTime(m);
+          s = checkTime(s);
+          document.getElementById('txt').innerHTML =  h + ":" + m + ":" + s;
+          setTimeout(startTime, 1000);
+        }
+        
+        function checkTime(i) {
+          if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+          return i;
+        }
+</script>
+
+    <div id="head" class="thehead">
+        <h1><b>Santiago Gutiérrez Romero</b></h1>
+        <p>IT student</p>
+
+        <script>
+            function darkMode(){
+                var a = document.getElementById("body");
+                if(a.classList.contains("bodyDark")){
+                    document.getElementById("head").classList.replace("theheadDark", "thehead");
+                    document.getElementById("body").classList.replace("bodyDark", "body");
+                } else {
+                document.getElementById("body").classList.replace("body", "bodyDark");
+                document.getElementById("head").classList.replace("thehead", "theheadDark");
+                }   
+            }
+        </script>
+
+        <div class="buttonPosition">
+            <a class="buttondarmode" onclick="darkMode()">
+            <img id="hoverin" class="image" src="./darkmode.png">
+            </a>
+            <b>
+            <div id="txt"></div>
+            </b>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        alert("The following page is under construction and contain personal information.\n\nPlease, do not use it for any other purpose.");
+    </script>
+    
+<main>
+
+    <script  type="text/javascript">
+        function changeContainer(){
+            
+
+            var x = document.getElementById("linked")
+                  if (x.style.display === "block") {
+                    x.style.display = "none";
+                    document.getElementById("Container").classList.replace("mainContainerExpanded", "mainContainer");
+                  } else {
+                    x.style.display = "block";
+                    document.getElementById("Container").classList.replace("mainContainer", "mainContainerExpanded");
+                  }
+        }
+    </script>
+
+
+    <div id="Container" class="mainContainer">
+        <div class="insideContainer">
+            <h3 style="margin: 5px;"><b>About Me</b></h3>
+            <p>I am Santiago Gutiérrez Romero and I am 24 years old, I come from Seville a city located in the south of Spain, 
+            I consider my self as easygoing person, open-minded, straightforward and with a big motivation. My main hobbies are spending 
+            time with friends and practicing sport in the middle of the nature, but I also like to hang out and know new people.</p>
+                <a onclick="changeContainer()">
+                    <img id="hoverinArrow" class="image" src="./downArrow.jpg">
+                </a>
+            <div class="buttondarmode" id="linked" style="display: none;">
+                <a href="https://www.linkedin.com/in/santiago-guti%C3%A9rrez-romero-30110a226">
+                <img id="hoverinArrowLinked" class="image2" src="./linked.png">
+                </a>
+                <a href="https://eutechengineers.com/">
+                    <img id="hoverinArrowEu" class="image3" src="./eutech.png">
+                </a>
+            </div>
+        </div>
+    </div>
+
+<div class="naviPosition">
+    <div class="naviDecarate">
+        
+        
+            <a href="./BasicwebV2.html">
+            <button class="button"><span>About me</span></button><br>
+            </a>
+            <a href="./Basicweb1V2.html">
+            <button class="button"><span>Resume</span></button><br>
+            </a>
+            <a href="./Basicweb2V2.html">
+            <button class="button"><span>Contact</span></button><br>
+            </a>
+    </div>
+</div>
+
+</main>
+
+
+    <footer>
+<div>
+    <div class="thefoot">
+        <b>This Project was made by Santiago Gutiérrez Romero</b>
+            <p>
+            <span class="spanLabel"><span class="label">Front-end</span></span>
+            <span class="spanLabel"><span class="label">Typescript</span></span>
+            <span class="spanLabel"><span class="label">Windows</span></span>
+            <span class="spanLabel"><span class="label">Back-end</span></span>
+            <span class="spanLabel"><span class="label">Javascript</span></span>
+            <span class="spanLabel"><span class="label">Linux</span></span>
+            <span class="spanLabel"><span class="label">Node.js</span></span>
+            <span class="spanLabel"><span class="label">PhP</span></span>
+            <span class="spanLabel"><span class="label">HTML</span></span>
+            <span class="spanLabel"><span class="label">Angular.js</span></span>
+            <span class="spanLabel"><span class="label">Object-Oriented Programming</span></span>
+            <span class="spanLabel"><span class="label">CSS</span></span>
+            <span class="spanLabel"><span class="label">React</span></span>
+            <span class="spanLabel"><span class="label">Operatives Systems</span></span>
+            </p>
+    </div>
+</div>
+    </footer>
+</body>
+
+</html>
